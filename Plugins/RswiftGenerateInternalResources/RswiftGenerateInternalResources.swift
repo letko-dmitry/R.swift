@@ -15,6 +15,7 @@ struct RswiftGenerateInternalResources: BuildToolPlugin {
 
         let outputDirectoryPath = context.pluginWorkDirectory
             .appending(subpath: target.name)
+            .appending(subpath: UUID().uuidString)
 
         try FileManager.default.createDirectory(atPath: outputDirectoryPath.string, withIntermediateDirectories: true)
 
